@@ -10,3 +10,11 @@
   flex-wrap: wrap;
   align-content: flex-start;
 }
+
+.com-collapse {
+  margin-top: 0px;
+}
+
+.com-collapse :global(.ant-collapse-content-box) {
+  padding: 0;
+}

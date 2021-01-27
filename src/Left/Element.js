@@ -57,7 +57,7 @@ export default Element;
 // 目前没有用icon，但是可以补上
 const WidgetUI = ({ dragRef, text, icon, onClick }) => {
   return (
-    <li ref={dragRef} className="com-item" onClick={onClick}>
+    <div ref={dragRef} className="com-item" onClick={onClick}>
       {icon && (
         <i
           className="com-item-icon"
@@ -66,6 +66,6 @@ const WidgetUI = ({ dragRef, text, icon, onClick }) => {
       )}
       <div className="com-item-name">{text}</div>
       <div className="com-item-num">0/100</div>
-    </li>
+    </div>
   );
 };
