@@ -8,7 +8,8 @@ interface ItemSettingsProps {
 }
 
 const ItemSettings: React.FC<ItemSettingsProps> = ({}) => {
-  const { selected, flatten, onItemChange } = useStore();
+  const { selected, flatten, onItemChange, userProps } = useStore();
+  const { widgets } = userProps;
 
   const onDataChange = newData => {
     if (selected) {
@@ -32,12 +33,13 @@ const ItemSettings: React.FC<ItemSettingsProps> = ({}) => {
     console.log(error);
   }
 
-  // TODO2: 这边开放
+  console.log('widgets fuck', widgets);
 
   return (
     <div style={{ paddingRight: 24 }}>
       <FormRender
         schema={itemSelected?.schema?.data}
+        widgets={widgets}
         formData={itemSelected?.data}
         onChange={onDataChange}
       />

@@ -18,6 +18,7 @@ const DEFAULT_SCHEMA = {
 function App(
   {
     defaultValue,
+    widgets,
     templates,
     submit,
     transformer,
@@ -84,6 +85,7 @@ function App(
   };
 
   const userProps = {
+    widgets,
     templates,
     submit,
     transformFrom,

@@ -1,9 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import ModuleEditor from 'module-editor';
+import BraftEditor from 'braft-editor';
 import './index.css';
 
 const ProductList = () => {
   return <>产品列表组件</>;
+};
+
+const RichEdit = data => {
+  return <div dangerouslySetInnerHTML={data?.content} />;
+};
+
+const RichEditWidget = ({ name, value, onChange }) => {
+  const [editorState, setEditorState] = useState(
+    BraftEditor.createEditorState(value),
+  );
+
+  const handleChange = state => {
+    setEditorState(state);
+    onChange?.(name, state.toHTML());
+  };
+  return (
+    <BraftEditor
+      className="richEdit"
+      value={editorState}
+      onChange={handleChange}
+    />
+  );
 };
 
 const defaultValue = {
@@ -157,6 +180,24 @@ const settings = [
           },
         },
       },
+      {
+        text: '富文本',
+        name: 'rich_edit',
+        schema: {
+          ui: {
+            component: 'RichEdit',
+          },
+          data: {
+            type: 'object',
+            properties: {
+              content: {
+                name: 'content',
+                'ui:widget': 'richEdit',
+              },
+            },
+          },
+        },
+      },
     ],
   },
 ];
@@ -169,12 +210,14 @@ const Demo = () => {
     window.open('https://x-render.gitee.io/form-render/playground');
   };
 
-  const components = { ProductList };
+  const components = { ProductList, RichEdit };
+  const widgets = { richEdit: RichEditWidget };
 
   return (
     <div style={{ height: '100vh' }}>
       <ModuleEditor
         ref={ref}
+        widgets={widgets}
         extraButtons={[{ text: '预览', onClick }]}
         settings={settings}
         components={components}
