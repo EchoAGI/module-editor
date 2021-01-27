@@ -33,8 +33,6 @@ const ItemSettings: React.FC<ItemSettingsProps> = ({}) => {
     console.log(error);
   }
 
-  console.log('widgets fuck', widgets);
-
   return (
     <FormRender
       schema={itemSelected?.schema?.data}

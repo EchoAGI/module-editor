@@ -66,7 +66,7 @@ const Demo = () => {
   };
 
   return (
-    <Generator
+    <ModuleEditor
       defaultValue={defaultValue}
       templates={templates}
       submit={submit}

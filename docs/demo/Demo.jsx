@@ -74,7 +74,11 @@ const Demo = () => {
         width="90%"
         bodyStyle={{ height: '80vh' }}
       >
-        <Generator ref={genRef} defaultValue={schema} templates={templates} />
+        <ModuleEditor
+          ref={genRef}
+          defaultValue={schema}
+          templates={templates}
+        />
       </Modal>
       <TextArea
         autoSize
