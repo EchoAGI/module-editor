@@ -1,0 +1,40 @@
+.com-item {
+  list-style: none;
+  width: 50%;
+  height: 88px;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  cursor: move;
+}
+
+.com-item:hover {
+  border: 1px dashed #ddd;
+  color: #409eff;
+  border: 1px dashed #409eff;
+}
+
+.com-item .com-item-icon {
+  display: inline-block;
+  margin-top: 8px;
+  background-position: 0 0;
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+}
+
+.com-item .com-item-name {
+  color: #323233;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+.com-item .com-item-num {
+  color: #7d7e80;
+  line-height: 16px;
+  margin-top: 4px;
+}
