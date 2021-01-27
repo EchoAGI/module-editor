@@ -36,14 +36,12 @@ const ItemSettings: React.FC<ItemSettingsProps> = ({}) => {
   console.log('widgets fuck', widgets);
 
   return (
-    <div style={{ paddingRight: 24 }}>
-      <FormRender
-        schema={itemSelected?.schema?.data}
-        widgets={widgets}
-        formData={itemSelected?.data}
-        onChange={onDataChange}
-      />
-    </div>
+    <FormRender
+      schema={itemSelected?.schema?.data}
+      widgets={widgets}
+      formData={itemSelected?.data}
+      onChange={onDataChange}
+    />
   );
 };
 
