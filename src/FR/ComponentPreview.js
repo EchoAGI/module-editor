@@ -2,7 +2,7 @@ import React from 'react';
 import { useStore } from '../hooks';
 
 const DummyComponent = () => {
-  return <>未选中组件</>;
+  return <>没有找到对应组件</>;
 };
 
 const ComponentPreview = ({
