@@ -47,17 +47,21 @@ export const elements = [
     name: 'title',
     icon:
       'https://img.yzcdn.cn/public_files/2019/02/12/add4829af43def85a200029c3e485d77.png',
-    component: 'TitleComponent',
     schema: {
-      type: 'object',
-      properties: {
-        content: {
-          type: 'string',
-          title: '标题内容',
-        },
-        description: {
-          type: 'string',
-          title: '描述内容',
+      ui: {
+        component: 'TitleComponent',
+      },
+      data: {
+        type: 'object',
+        properties: {
+          title: {
+            type: 'string',
+            title: '标题内容',
+          },
+          description: {
+            type: 'string',
+            title: '描述内容',
+          },
         },
       },
     },

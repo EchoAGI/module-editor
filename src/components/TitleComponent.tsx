@@ -1,9 +1,8 @@
 import React from 'react';
 
-interface TitleComponentProps {}
-
-const TitleComponent: React.FC<TitleComponentProps> = () => {
-  return <>标题组件</>;
+const TitleComponent: React.FC<any> = ({ value }) => {
+  console.log('TitleComponent data', value);
+  return <>{value?.title}</>;
 };
 
 export default TitleComponent;

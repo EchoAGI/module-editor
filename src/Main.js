@@ -8,10 +8,8 @@ import 'antd/dist/antd.css';
 
 const DEFAULT_SCHEMA = {
   schema: {
-    schema: {
-      ui: {
-        type: 'container',
-      },
+    ui: {
+      type: 'container',
     },
   },
 };
