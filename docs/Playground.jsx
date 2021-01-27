@@ -173,7 +173,12 @@ const Demo = () => {
 
   return (
     <div style={{ height: '100vh' }}>
-      <ModuleEditor />
+      <ModuleEditor
+        ref={ref}
+        extraButtons={[{ text: '预览', onClick }]}
+        settings={settings}
+        components={components}
+      />
     </div>
   );
 };

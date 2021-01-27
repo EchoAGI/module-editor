@@ -81,7 +81,7 @@ const ComponentPreview = ({
       ) : null}
       <div className={contentClass}>
         <Component
-          value={data}
+          data={data}
           onChange={onChange}
           schema={schema}
           {...usefulWidgetProps}
